@@ -1,0 +1,26 @@
+
+3.11 Python 读取文件的六种方式
+http://image.iswbm.com/20200804124133.png
+第一种：使用 open
+
+常规操作
+
+with open('data.txt') as fp:
+  content = fp.readlines()
+
+第二种：使用 fileinput
+
+使用内置库 fileinput
+
+import fileinput
+
+with fileinput.input(files=('data.txt',)) as file:
+    content = [line for line in file]
+
+第三种：使用 filecache
+
+使用内置库 filecache，你可以用它来指定读取具体某一行，或者某几行，不指定就读取全部行。
+
+import linecache
+
+
